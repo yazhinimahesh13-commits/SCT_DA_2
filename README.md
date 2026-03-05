@@ -1,1 +1,13 @@
-# SCT_DA_2
+i use python language on google colab for this task2
+import pandas as pd
+
+df = pd.read_csv("superstore_raw.csv")
+
+print(df.info())
+print(df.isnull().sum())
+
+df = df.drop_duplicates()
+
+df['Order Date'] = pd.to_datetime(df['Order Date'])
+
+df.to_csv("superstore_cleaned.csv", index=False)
